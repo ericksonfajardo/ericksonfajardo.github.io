@@ -1156,6 +1156,14 @@ function switchTab(tab) {
 
 // ── Init ───────────────────────────────────────────────────────────────────
 startClock();
+
+// Set default alarm time to 5 minutes from now
+(function () {
+  const d = new Date(Date.now() + 5 * 60_000);
+  const hh = String(d.getHours()).padStart(2, '0');
+  const mm = String(d.getMinutes()).padStart(2, '0');
+  document.getElementById('alarm-time').value = `${hh}:${mm}`;
+})();
 </script>
 </body>
 </html>
