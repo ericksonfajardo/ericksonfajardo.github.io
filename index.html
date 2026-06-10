@@ -44,7 +44,8 @@
       padding: 0.75rem 1.5rem;
       margin-bottom: 1.25rem;
       letter-spacing: 2px;
-      align-self: flex-start;
+      align-self: stretch;
+      text-align: center;
     }
 
     /* ── Two-column layout ── */
@@ -530,15 +531,17 @@
     /* Wake Lock */
     .wakelock-bar {
       display: flex;
-      align-items: center;
-      gap: 0.875rem;
-      margin-bottom: 1.75rem;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.4rem;
+      margin-bottom: 0;
     }
 
     .wakelock-btn {
       flex: none;
       min-width: unset;
-      padding: 0.5rem 1.125rem;
+      width: 100%;
+      padding: 0.6rem 1rem;
       font-size: 0.875rem;
       background: #1a3256;
       color: #dbeafe;
@@ -556,6 +559,7 @@
     .wakelock-status {
       font-size: 0.8125rem;
       color: #4d7ab5;
+      text-align: center;
     }
 
     .wakelock-status.active { color: #60a5fa; }
@@ -576,11 +580,6 @@
   <div class="left-panel">
 
     <div class="clock-display" id="live-clock">--:--:--</div>
-
-    <div class="wakelock-bar">
-      <button id="wakelock-btn" class="wakelock-btn" onclick="toggleWakeLock()">☀️ Enable Wake Lock</button>
-      <span class="wakelock-status" id="wakelock-status">Screen may sleep</span>
-    </div>
 
     <div class="card">
       <h2>Add Alarm</h2>
@@ -631,6 +630,11 @@
       <button onclick="exportConfig()">Export JSON</button>
       <button onclick="document.getElementById('import-file').click()">Import JSON</button>
       <input type="file" id="import-file" accept=".json" onchange="importConfig(event)" />
+    </div>
+
+    <div class="wakelock-bar">
+      <button id="wakelock-btn" class="wakelock-btn" onclick="toggleWakeLock()">☀️ Enable Wake Lock</button>
+      <span class="wakelock-status" id="wakelock-status">Screen may sleep</span>
     </div>
 
   </div><!-- /left-panel -->
