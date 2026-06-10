@@ -877,6 +877,7 @@ function dismissAlarm(id) {
 
 // ── Cancel (active, not yet ringing) ──────────────────────────────────────
 function cancelAlarm(id) {
+  if (!confirm('Cancel this alarm?')) return;
   const alarm = alarms.find(a => a.id === id);
   if (!alarm) return;
   stopAlarmSound(alarm);
@@ -889,6 +890,7 @@ function cancelAlarm(id) {
 
 // ── Delete ─────────────────────────────────────────────────────────────────
 function deleteAlarm(id) {
+  if (!confirm('Delete this alarm? This cannot be undone.')) return;
   const alarm = alarms.find(a => a.id === id);
   if (alarm) stopAlarmSound(alarm);
   alarms = alarms.filter(a => a.id !== id);
