@@ -885,7 +885,11 @@ function cancelAlarm(id) {
   alarm.ringing   = false;
   alarm.cancelled = true;
   renderList();
-  showToast('Alarm cancelled.');
+  showToast('Alarm cancelled. Removing in 3 seconds…');
+  setTimeout(() => {
+    alarms = alarms.filter(a => a.id !== id);
+    renderList();
+  }, 3000);
 }
 
 // ── Delete ─────────────────────────────────────────────────────────────────
