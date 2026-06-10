@@ -105,7 +105,8 @@
     .right-panel-scroll {
       flex: 1;
       overflow-y: auto;
-      padding: 1rem 1.25rem;
+      padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+      margin: 0.5rem;
       display: flex;
       flex-direction: column;
       gap: 0.875rem;
