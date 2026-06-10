@@ -577,9 +577,6 @@
   <!-- LEFT: controls -->
   <div class="left-panel">
 
-    <h1>ALARM CLOCK</h1>
-    <p class="subtitle">Set, loop, export, and import your alarms</p>
-
     <div class="clock-display" id="live-clock">--:--:--</div>
 
     <div class="wakelock-bar">
